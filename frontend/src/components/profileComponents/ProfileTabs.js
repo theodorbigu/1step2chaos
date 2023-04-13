@@ -25,8 +25,8 @@ const ProfileTabs = () => {
   const userDetails = useSelector((state) => state.userDetails);
   const { loading, error, user } = userDetails;
 
-  // const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
-  // const { loading: updateLoading } = userUpdateProfile;
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile);
+  const { loading: updateLoading } = userUpdateProfile;
 
   useEffect(() => {
     if (user) {
@@ -54,7 +54,7 @@ const ProfileTabs = () => {
       <Toast />
       {error && <Message variant="alert-danger">{error}</Message>}
        {loading && <Loading />}
-      {/* {updateLoading && <Loading />}  */}
+      {updateLoading && <Loading />} 
       <form className="row  form-container" onSubmit={submitHandler}>
         <div className="col-md-6">
           <div className="form">
